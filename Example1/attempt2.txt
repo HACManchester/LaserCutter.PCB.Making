@@ -1,0 +1,10 @@
+For attempt2 I'll try the following
+
+1. use a single layer of paint on the board
+2. speed 80 but with a power setting under 20
+
+3. create a test board with varying thickness's
+first for the cutline up from 0.1mm
+next for the center line up from 0.1mm to at least 1mm
+
+8mil seems to be too small for the center line / track

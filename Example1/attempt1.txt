@@ -1,0 +1,24 @@
+1. Cut board on band saw, using size of 10cm high by 5.5cm wide
+2. added one coat at 3:50 - 5:10
+using spray paint, Montana Black from Fred Aldous
+3. added two coat at 5:10 - 6:10
+4. added three coat at 6:10
+
+according to bob try speed 80 power 10
+then move up in 5 power chunks untill all the paint is removed
+
+speed 80
+power 20 / 25
+is okay for 3 layers of paint
+but we may want fewer layers of paint
+
+
+
+
+
+TODO for Wiki
+1. for light colours these are not eched
+for dark colours these are
+make sure Luminosity is as dark as possible
+
+2 you can also only map by colour when there is more than one colour
