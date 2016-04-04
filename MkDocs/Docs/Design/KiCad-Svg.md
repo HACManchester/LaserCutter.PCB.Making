@@ -2,8 +2,6 @@
 
 **Note this is an older doc I've kept for info, it's better to use the Gerber method instead because it's easier**
 
-The below lists the steps needed to export a KiCad PCB for use with the laser cutter.
-
 ## PCB Design
 
 The first step is to open the PCB Design within KiCad
