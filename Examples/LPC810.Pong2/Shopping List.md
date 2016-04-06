@@ -39,6 +39,7 @@ It has the same forward voltage as the original thu-hole part, 410mV.
 ## Parts already sourced
 
 Check which resistors and caps I already have
+Check for spare other parts like pots in the hackspace
 
 ## TODO
 
@@ -50,7 +51,8 @@ Check which resistors and caps I already have
 
 ### Footprints
 
-1. Add Power LED Footprint
-2. Add Footprints for all switches
-3. Check Diode Footprint is SOD-323 on PCB
-4. Add Footprints for Phono Sockets
+1. check pin numbers for switches is correct on the PCB
+2. check Footprints for all switches
+3. check Footprints for Phono Sockets
+4. Resize board / auto place / auto route
+

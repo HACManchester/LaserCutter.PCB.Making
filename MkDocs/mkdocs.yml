@@ -1,10 +1,12 @@
-site_name: Manchester HacSpace - Laser Cutter
+site_name: Manchester HacSpace - Laser PCB
 pages:
 - Home: index.md
 - Design:
-    - Kicad - Exporting Gerbers: Design/Kicad-GerberExport.md
+    - KiCad - PCB Part 1: Design/KiCad-Pcb1.md
+    - KiCad - PCB Part 2: Design/KiCad-Pcb2.md
+    - KiCad - Exporting Gerbers: Design/KiCad-GerberExport.md
     - FlatCAM - Single Sided Boards: Design/FlatCAM-SingleSided.md
-    - Kicad - Exporting as SVG: Design/KiCad-Svg.md
+    - KiCad - Exporting as SVG: Design/KiCad-Svg.md
 
 - Etching:
     - Cleaning the Board: Etching/Cleaning-Board.md
@@ -20,7 +22,7 @@ pages:
     - Further Ideas: Misc/Further-Ideas.md
     - Links: Misc/Links.md
 
-theme: slate
+theme: united
 #theme: alabaster
 #theme: readthedocs
 #theme: mkdocs
