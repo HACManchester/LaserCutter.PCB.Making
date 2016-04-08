@@ -1,12 +1,12 @@
 # Kicad - Design
 
-**Note this is an older doc I've kept for info, it's better to use the Gerber method instead because it's easier**
+**Note this is an older doc I've kept for info, it's better to use the Gerber files with FlatCam instead because it's easier and has more features**
 
 ## PCB Design
 
 The first step is to open the PCB Design within KiCad
 
-<a href="../../images/PCB/KiCad/KiCad-1.png"><img src="../../images/PCB/KiCad/KiCad-Svg1.png" height="50%" width="50%" ></a> <br>
+<a href="../../images/KiCad/ExportSvg/Svg1.png"><img src="../../images/KiCad/ExportSvg/Svg1.png" height="50%" width="50%" ></a> <br>
 
 ### Export Top Layer
 
@@ -25,7 +25,7 @@ Next we're going to export the top layer as an SVG image
   * Mirrored Plot: **Unticked** for the front layer
   * Exclude PCB edge layer from other layers: **Unticked** To include the Outer cut line
 
-<a href="../../images/PCB/KiCad/KiCad-2.png"><img src="../../images/PCB/KiCad/KiCad-Svg2.png" height="50%" width="50%" ></a> <br>
+<a href="../../images/KiCad/ExportSvg/Svg2.png"><img src="../../images/KiCad/ExportSvg/Svg2.png" height="50%" width="50%" ></a> <br>
 
 Click **Plot** to export the svg
 
@@ -36,7 +36,7 @@ Next for the bottom layer repeat as above but make the following changes
   * Select the Bottom Copper Layer on the left, unselect the Front Layer
   * Mirrored Plot: **Ticked** for the bottom layer
 
-<a href="../../images/PCB/KiCad/KiCad-3.png"><img src="../../images/PCB/KiCad/KiCad-Svg3.png" height="50%" width="50%" ></a> <br>
+<a href="../../images/KiCad/ExportSvg/Svg3.png"><img src="../../images/KiCad/ExportSvg/Svg3.png" height="50%" width="50%" ></a> <br>
 
 Click **Plot** to export the svg
 
@@ -52,7 +52,7 @@ First we want to resize the actual Document
   * Expand the **Resize page to content...**
   * Click **Resize page to drawing or selection** with the white outer box selected
 
-<a href="../../images/PCB/KiCad/KiCad-4.png"><img src="../../images/PCB/KiCad/KiCad-Svg4.png" height="50%" width="50%" ></a> <br>
+<a href="../../images/KiCad/ExportSvg/Svg4.png"><img src="../../images/KiCad/ExportSvg/Svg4.png" height="50%" width="50%" ></a> <br>
 
 Next we need to resize the big black box that surrounds the box so that it fits within the document, this is acting as a mask
 
@@ -60,7 +60,7 @@ Next we need to resize the big black box that surrounds the box so that it fits 
   * Select the Outer black box and Select **Edit -> Paste Size -> Paste Size**
   * At the top Enter X: 0 Y: 0 to position the box at the bottom left corner
 
-<a href="../../images/PCB/KiCad/KiCad-5.png"><img src="../../images/PCB/KiCad/KiCad-Svg5.png" height="50%" width="50%" ></a> <br>
+<a href="../../images/KiCad/ExportSvg/Svg5.png"><img src="../../images/KiCad/ExportSvg/Svg5.png" height="50%" width="50%" ></a> <br>
 
 ## Examples
 
@@ -70,8 +70,8 @@ Some svg's of adafruit's pcb ruler for testing how small can we go
 
 A test of the pcb I replicated from the arduino cnc project, I've got no plan on using this (just created it to confirm the wiring is what I thought it was), but maybe a good test
 
-  * [Front Layer](../images/PCB/Examples/arduino-cnc-shield-2.02-F.Cu.svg)
-  * [Back Layer](../images/PCB/Examples/arduino-cnc-shield-2.02-B.Cu.svg)
+  * [Front Layer](../images/Examples/arduino-cnc-shield-2.02-F.Cu.svg)
+  * [Back Layer](../images/Examples/arduino-cnc-shield-2.02-B.Cu.svg)
 
 ## TODO
 

@@ -40,7 +40,7 @@ Within Kicad
   * Finally export this geometry as an SVG
   * This should give us a Negative to work with
 
-<a href="../../images/PCB/FlatCAM/FlatCAM-Mask1.png"><img src="../../images/PCB/FlatCAM/FlatCAM-Mask1.png" height="50%" width="50%" ></a> <br>
+<a href="../../images/Mask/SolderMask/FlatCAM-Mask1.png"><img src="../../images/Mask/SolderMask/FlatCAM-Mask1.png" height="50%" width="50%" ></a> <br>
 
 ## Editing within Inkscape
 
@@ -52,7 +52,7 @@ Next we need to do a small amount of editing within inkscape
   * Make sure the Opacity is also set to 100
   * Change the colour to something solid like bright red
 
-<a href="../../images/PCB/Inkscape/Inkscape-Mask1.png"><img src="../../images/PCB/Inkscape/Inkscape-Mask1.png" height="50%" width="50%" ></a> <br>
+<a href="../../images/Mask/SolderMask/Inkscape-Mask1.png"><img src="../../images/Mask/SolderMask/Inkscape-Mask1.png" height="50%" width="50%" ></a> <br>
 
 ## Import into Visicut
 
@@ -62,7 +62,7 @@ Next import the SVG into Visicut
   * Select Engrave Solid for the bright red colour mentioned above
   * This should highlight all the non solder pad areas as areas to be engraved.
 
-<a href="../../images/PCB/Visicut/Visicut-Mask1.png"><img src="../../images/PCB/Visicut/Visicut-Mask1.png" height="50%" width="50%" ></a> <br>
+<a href="../../images/Mask/SolderMask/Visicut-Mask1.png"><img src="../../images/Mask/SolderMask/Visicut-Mask1.png" height="50%" width="50%" ></a> <br>
 
 ## Spray the board
 

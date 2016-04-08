@@ -1,12 +1,18 @@
 site_name: Manchester HacSpace - Laser PCB
 pages:
 - Home: index.md
-- Design:
-    - KiCad - PCB Part 1: Design/KiCad-Pcb1.md
-    - KiCad - PCB Part 2: Design/KiCad-Pcb2.md
-    - KiCad - Exporting Gerbers: Design/KiCad-GerberExport.md
-    - FlatCAM - Single Sided Boards: Design/FlatCAM-SingleSided.md
-    - KiCad - Exporting as SVG: Design/KiCad-Svg.md
+- KiCad:
+    - KiCad - Library Management: KiCad/KiCad-LibraryMgmt.md
+    - KiCad - Schematic to PCB: KiCad/KiCad-SchematicPCB.md
+    - KiCad - Edge Border: KiCad/KiCad-EdgeBorder.md
+    - KiCad - Design Rules: KiCad/KiCad-DesignRules.md
+    - KiCad - Parts Placement: KiCad/KiCad-PartsPlacement.md
+    - KiCad - Routing: KiCad/KiCad-Routing.md
+    - KiCad - Exporting Gerbers: KiCad/KiCad-ExportGerber.md
+    - KiCad - Exporting as SVG: KiCad/KiCad-ExportSvg.md
+
+- FlatCAM:
+    - FlatCAM - Single Sided Boards: FlatCam/FlatCam-SingleSided.md
 
 - Etching:
     - Cleaning the Board: Etching/Cleaning-Board.md
