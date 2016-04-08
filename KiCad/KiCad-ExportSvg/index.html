@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Solder Paste Mylar - Manchester HacSpace - Laser PCB</title>
+	<title>KiCad - Exporting as SVG - Manchester HacSpace - Laser PCB</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -58,55 +58,55 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">KiCad <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-LibraryMgmt/">KiCad - Library Management</a>
+    <a href="../KiCad-LibraryMgmt/">KiCad - Library Management</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-SchematicPCB/">KiCad - Schematic to PCB</a>
+    <a href="../KiCad-SchematicPCB/">KiCad - Schematic to PCB</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-EdgeBorder/">KiCad - Edge Border</a>
+    <a href="../KiCad-EdgeBorder/">KiCad - Edge Border</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-DesignRules/">KiCad - Design Rules</a>
+    <a href="../KiCad-DesignRules/">KiCad - Design Rules</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-PartsPlacement/">KiCad - Parts Placement</a>
+    <a href="../KiCad-PartsPlacement/">KiCad - Parts Placement</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-Routing/">KiCad - Routing</a>
+    <a href="../KiCad-Routing/">KiCad - Routing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-ExportGerber/">KiCad - Exporting Gerbers</a>
+    <a href="../KiCad-ExportGerber/">KiCad - Exporting Gerbers</a>
 </li>
 
                     
                         
-<li >
-    <a href="../../KiCad/KiCad-ExportSvg/">KiCad - Exporting as SVG</a>
+<li class="active">
+    <a href="./">KiCad - Exporting as SVG</a>
 </li>
 
                     
@@ -163,19 +163,19 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mask <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
-<li class="active">
-    <a href="./">Solder Paste Mylar</a>
+<li >
+    <a href="../../Mask/SolderPaste-Stencil/">Solder Paste Mylar</a>
 </li>
 
                     
                         
 <li >
-    <a href="../SolderMask/">Solder Mask</a>
+    <a href="../../Mask/SolderMask/">Solder Mask</a>
 </li>
 
                     
@@ -214,12 +214,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../../Etching/Etching-Tank/">
+                    <a rel="next" href="../KiCad-ExportGerber/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../SolderMask/">
+                    <a rel="prev" href="../../FlatCam/FlatCam-SingleSided/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -233,37 +233,96 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#solder-paste-stencil">Solder Paste Stencil</a></li>
+        <li class="main active"><a href="#kicad-design">Kicad - Design</a></li>
         
-            <li><a href="#export-the-solder-paste-layer">Export the Solder Paste Layer</a></li>
+            <li><a href="#pcb-design">PCB Design</a></li>
         
-            <li><a href="#import-to-flatcam">Import to FlatCAM</a></li>
+            <li><a href="#inkscape-edit">Inkscape Edit</a></li>
         
-            <li><a href="#import-to-visicut">Import to Visicut</a></li>
+            <li><a href="#examples">Examples</a></li>
+        
+            <li><a href="#todo">TODO</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="solder-paste-stencil">Solder Paste Stencil</h1>
-<p>It&rsquo;s possible to create a solder paste mask using the laser cutter and A4 Mylar stencil sheets</p>
-<h2 id="export-the-solder-paste-layer">Export the Solder Paste Layer</h2>
-<p>Within Kicad</p>
+<h1 id="kicad-design">Kicad - Design</h1>
+<p><strong>Note this is an older doc I&rsquo;ve kept for info, it&rsquo;s better to use the Gerber files with FlatCam instead because it&rsquo;s easier and has more features</strong></p>
+<h2 id="pcb-design">PCB Design</h2>
+<p>The first step is to open the PCB Design within KiCad</p>
+<p><a href="../../images/KiCad/ExportSvg/Svg1.png"><img src="../../images/KiCad/ExportSvg/Svg1.png" height="50%" width="50%" ></a> <br></p>
+<h3 id="export-top-layer">Export Top Layer</h3>
+<p>Next we&rsquo;re going to export the top layer as an SVG image</p>
+<table>
+<thead>
+<tr>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>It&rsquo;s best to avoid the use of the File -&gt; Export Svg option since that doesn&rsquo;t allow for a negative to be created, instead we&rsquo;re going to use Plot</td>
+</tr>
+<tr>
+<td>It&rsquo;s also best to draw a square around the board on the &ldquo;Edge Cuts&rdquo; Layer, make sure it doesn&rsquo;t come into contact with any of the pins</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>Export the layers F.Paste and B.Paste as Gerbers</li>
-<li><strong>Auxiliary axis as origin:</strong> Ticked</li>
-<li><strong>Exclude PCB edge layer from other layers:</strong> unticked</li>
-<li>Plot these layers out as gerber files</li>
+<li>Select <strong>File -&gt; Plot</strong></li>
+<li>Select the Front Copper Layer on the left</li>
+<li>Select the Output directory &ldquo;svg/&rdquo;</li>
+<li>Select Drill marks: <strong>Small</strong></li>
+<li>Negative plot: <strong>Ticked</strong></li>
+<li>Mirrored Plot: <strong>Unticked</strong> for the front layer</li>
+<li>Exclude PCB edge layer from other layers: <strong>Unticked</strong> To include the Outer cut line</li>
 </ul>
-<h2 id="import-to-flatcam">Import to FlatCAM</h2>
-<p>Next import to flatcam, then re-export as an SVG</p>
-<p><a href="../../images/Mask/SolderStencil/FlatCAM-Paste1.png"><img src="../../images/Mask/SolderStencil/FlatCAM-Paste1.png" height="50%" width="50%" ></a> <br></p>
-<h2 id="import-to-visicut">Import to Visicut</h2>
-<p>Finaly drag and drop the svg into Visicut and use Map by colour</p>
-<p>TODO see if Engrave Solid is the best option even though we&rsquo;re cutting through for accuracy
-also what power to use?</p>
-<p><a href="../../images/Mask/SolderStencil/Visicut-Paste1.png"><img src="../../images/Mask/SolderStencil/Visicut-Paste1.png" height="50%" width="50%" ></a> <br></p></div>
+<p><a href="../../images/KiCad/ExportSvg/Svg2.png"><img src="../../images/KiCad/ExportSvg/Svg2.png" height="50%" width="50%" ></a> <br></p>
+<p>Click <strong>Plot</strong> to export the svg</p>
+<h3 id="export-bottom-layer">Export Bottom Layer</h3>
+<p>Next for the bottom layer repeat as above but make the following changes</p>
+<ul>
+<li>Select the Bottom Copper Layer on the left, unselect the Front Layer</li>
+<li>Mirrored Plot: <strong>Ticked</strong> for the bottom layer</li>
+</ul>
+<p><a href="../../images/KiCad/ExportSvg/Svg3.png"><img src="../../images/KiCad/ExportSvg/Svg3.png" height="50%" width="50%" ></a> <br></p>
+<p>Click <strong>Plot</strong> to export the svg</p>
+<h2 id="inkscape-edit">Inkscape Edit</h2>
+<p>Next we need to resize a couple of things within inkscape.</p>
+<p>First we want to resize the actual Document</p>
+<ul>
+<li>Open each svg within inkscape</li>
+<li>Open up File -&gt; Document Properties</li>
+<li>Select the white box surrounding the Board</li>
+<li>Expand the <strong>Resize page to content&hellip;</strong></li>
+<li>Click <strong>Resize page to drawing or selection</strong> with the white outer box selected</li>
+</ul>
+<p><a href="../../images/KiCad/ExportSvg/Svg4.png"><img src="../../images/KiCad/ExportSvg/Svg4.png" height="50%" width="50%" ></a> <br></p>
+<p>Next we need to resize the big black box that surrounds the box so that it fits within the document, this is acting as a mask</p>
+<ul>
+<li>Select the white outline box, and select <strong>Edit -&gt; Copy</strong></li>
+<li>Select the Outer black box and Select <strong>Edit -&gt; Paste Size -&gt; Paste Size</strong></li>
+<li>At the top Enter X: 0 Y: 0 to position the box at the bottom left corner</li>
+</ul>
+<p><a href="../../images/KiCad/ExportSvg/Svg5.png"><img src="../../images/KiCad/ExportSvg/Svg5.png" height="50%" width="50%" ></a> <br></p>
+<h2 id="examples">Examples</h2>
+<p>Some svg&rsquo;s of adafruit&rsquo;s pcb ruler for testing how small can we go</p>
+<ul>
+<li><a href="https://github.com/grbd/CAD.OxBot.Circuit/tree/master/Tests/AdafruitPCBRuller/svg">https://github.com/grbd/CAD.OxBot.Circuit/tree/master/Tests/AdafruitPCBRuller/svg</a></li>
+</ul>
+<p>A test of the pcb I replicated from the arduino cnc project, I&rsquo;ve got no plan on using this (just created it to confirm the wiring is what I thought it was), but maybe a good test</p>
+<ul>
+<li><a href="../../images/Examples/arduino-cnc-shield-2.02-F.Cu.svg">Front Layer</a></li>
+<li><a href="../../images/Examples/arduino-cnc-shield-2.02-B.Cu.svg">Back Layer</a></li>
+</ul>
+<h2 id="todo">TODO</h2>
+<ul>
+<li>None of this is tested so far</li>
+<li>One suggestion is that lines should be no thinner than 1.5pt, 5pt font. Further experimentation is needed</li>
+<li>I could do with trying to print adafruit&rsquo;s PCB ruler as a test.</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

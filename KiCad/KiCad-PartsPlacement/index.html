@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Solder Paste Mylar - Manchester HacSpace - Laser PCB</title>
+	<title>KiCad - Parts Placement - Manchester HacSpace - Laser PCB</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -58,55 +58,55 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">KiCad <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-LibraryMgmt/">KiCad - Library Management</a>
+    <a href="../KiCad-LibraryMgmt/">KiCad - Library Management</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-SchematicPCB/">KiCad - Schematic to PCB</a>
+    <a href="../KiCad-SchematicPCB/">KiCad - Schematic to PCB</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-EdgeBorder/">KiCad - Edge Border</a>
+    <a href="../KiCad-EdgeBorder/">KiCad - Edge Border</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-DesignRules/">KiCad - Design Rules</a>
+    <a href="../KiCad-DesignRules/">KiCad - Design Rules</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">KiCad - Parts Placement</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-PartsPlacement/">KiCad - Parts Placement</a>
+    <a href="../KiCad-Routing/">KiCad - Routing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-Routing/">KiCad - Routing</a>
+    <a href="../KiCad-ExportGerber/">KiCad - Exporting Gerbers</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-ExportGerber/">KiCad - Exporting Gerbers</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../../KiCad/KiCad-ExportSvg/">KiCad - Exporting as SVG</a>
+    <a href="../KiCad-ExportSvg/">KiCad - Exporting as SVG</a>
 </li>
 
                     
@@ -163,19 +163,19 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mask <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
-<li class="active">
-    <a href="./">Solder Paste Mylar</a>
+<li >
+    <a href="../../Mask/SolderPaste-Stencil/">Solder Paste Mylar</a>
 </li>
 
                     
                         
 <li >
-    <a href="../SolderMask/">Solder Mask</a>
+    <a href="../../Mask/SolderMask/">Solder Mask</a>
 </li>
 
                     
@@ -214,12 +214,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../../Etching/Etching-Tank/">
+                    <a rel="next" href="../KiCad-DesignRules/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../SolderMask/">
+                    <a rel="prev" href="../KiCad-Routing/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -233,37 +233,33 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#solder-paste-stencil">Solder Paste Stencil</a></li>
+        <li class="main active"><a href="#kicad-parts-placement-todo">KiCad Parts Placement - TODO</a></li>
         
-            <li><a href="#export-the-solder-paste-layer">Export the Solder Paste Layer</a></li>
+            <li><a href="#locking-parts">Locking parts</a></li>
         
-            <li><a href="#import-to-flatcam">Import to FlatCAM</a></li>
-        
-            <li><a href="#import-to-visicut">Import to Visicut</a></li>
+            <li><a href="#place-parts">Place parts</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="solder-paste-stencil">Solder Paste Stencil</h1>
-<p>It&rsquo;s possible to create a solder paste mask using the laser cutter and A4 Mylar stencil sheets</p>
-<h2 id="export-the-solder-paste-layer">Export the Solder Paste Layer</h2>
-<p>Within Kicad</p>
+<h1 id="kicad-parts-placement-todo">KiCad Parts Placement - TODO</h1>
+<h2 id="locking-parts">Locking parts</h2>
+<p>For the next step we&rsquo;re going to move and lock the parts which need to be at the edges of the board in place</p>
 <ul>
-<li>Export the layers F.Paste and B.Paste as Gerbers</li>
-<li><strong>Auxiliary axis as origin:</strong> Ticked</li>
-<li><strong>Exclude PCB edge layer from other layers:</strong> unticked</li>
-<li>Plot these layers out as gerber files</li>
+<li>Click / Turn on the Mode footprint button</li>
+<li>Move each of the parts which need to be in a fixed place into position</li>
+<li>Right Click on those parts and select Lock <strong>Footprint</strong></li>
 </ul>
-<h2 id="import-to-flatcam">Import to FlatCAM</h2>
-<p>Next import to flatcam, then re-export as an SVG</p>
-<p><a href="../../images/Mask/SolderStencil/FlatCAM-Paste1.png"><img src="../../images/Mask/SolderStencil/FlatCAM-Paste1.png" height="50%" width="50%" ></a> <br></p>
-<h2 id="import-to-visicut">Import to Visicut</h2>
-<p>Finaly drag and drop the svg into Visicut and use Map by colour</p>
-<p>TODO see if Engrave Solid is the best option even though we&rsquo;re cutting through for accuracy
-also what power to use?</p>
-<p><a href="../../images/Mask/SolderStencil/Visicut-Paste1.png"><img src="../../images/Mask/SolderStencil/Visicut-Paste1.png" height="50%" width="50%" ></a> <br></p></div>
+<p><a href="../../images/KiCad/PartsPlacement/Pcb1.png"><img src="../../images/KiCad/PartsPlacement/Pcb1.png" height="50%" width="50%" ></a> <br></p>
+<h2 id="place-parts">Place parts</h2>
+<p>Next we&rsquo;re going to use the Auto Place feature of KiCad just to do an initial placement <br>
+(make sure Alex doesn&rsquo;t catch you using this)</p>
+<p>Make sure to set the grid size to something fairly small before using this.
+Also you may want to manually move things around afterwards for better placement
+I just find it&rsquo;s a good initial step before anything else</p>
+<p><a href="../../images/KiCad/PartsPlacement/Pcb2.png"><img src="../../images/KiCad/PartsPlacement/Pcb2.png" height="50%" width="50%" ></a> <br></p></div>
         </div>
 
         <footer class="col-md-12">

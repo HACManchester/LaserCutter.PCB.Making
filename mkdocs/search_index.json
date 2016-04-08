@@ -26,104 +26,229 @@
             "title": "Laser Cutter"
         }, 
         {
-            "location": "/Design/KiCad-GerberExport/", 
-            "text": "Kicad Exporting Gerbers\n\n\nOne of the first steps we need to do is get some gerber and drill files exported from Kicad.\nThese files will be imported into FlatCAM for isolation routing and for generating the svg export for visicut.\n\n\nTODO I\nm not sure of the minimum track width at this stage, something to be looked into, maybe a drc check file for KiCad\n\n\nSetting the Auxiliary Axis\n\n\nFirst we want to set the Auxiliary to the bottom left hand corner of the board \n\n\n\n\nSelect \nPlace -\n Drill and Place Offset\n from the Menu\n\n\nClick on the bottom left hand corner of the board for the 0,0 point\n\n\nA red circle should now show up at this corner\n\n\n\n\n \n\n\n \n\n\nExporting Gerbers\n\n\nNext we want to use the Plot option to output the drill and Gerber Files\n\n\n\n\nSelect \nFile -\n Plot\n from the menu\n\n\n\n\n \n\n\n\n\nNext select the output directory\n\n\nSelect which layers to export (Top / Bottom)\n\n\nMake sure \nUse auxiliary axis as origin\n is ticked\n\n\nClick Plot\n\n\n\n\n \n\n\nExporting Drill Files\n\n\nNext we\nre going to generate the drill files, since FlatCAM can read these too\n\n\n\n\nSelect \nGenerate Drill File\n\n\nYou should be able to leave most of the options at the defaults\n\n\nMake sure \nDrill Origin\n is set to \nAuxiliary Axis\n\n\nClick \nDrill File\n to generate the .drl file", 
+            "location": "/KiCad/KiCad-LibraryMgmt/", 
+            "text": "KiCad - Library Management\n\n\nTypically with KiCad it stores multiple schematic parts within a single .lib file \n\nBut the PCB Footprints are usually stored one file per footprint within a directory ending in .pretty\n\n\nTODO", 
+            "title": "KiCad - Library Management"
+        }, 
+        {
+            "location": "/KiCad/KiCad-LibraryMgmt/#kicad-library-management", 
+            "text": "Typically with KiCad it stores multiple schematic parts within a single .lib file  \nBut the PCB Footprints are usually stored one file per footprint within a directory ending in .pretty  TODO", 
+            "title": "KiCad - Library Management"
+        }, 
+        {
+            "location": "/KiCad/KiCad-SchematicPCB/", 
+            "text": "KiCad - Schematic to PCB\n\n\nFor this doc I\nm going to go over the steps needed to convert a KiCad schematic to an initial PCB Board\n\n\nAssigning Footprints\n\n\nFirst we\nre going to want to assign footprints to each of the components within the schematic.\nThe newer latest version of KiCad makes this a lot easier than the old version.\nWe have now have a way of doing this without having to jump into the PCB Editor first.\n\n\n \n\n\nFirst select \nAssign Component Footprints\n from the \nTools\n menu\n\n\n \n\n\nUnlike eagle within KiCad footprints and schematic parts are considered completely seperate entities.\nIn the past this used to cause problems with linking one to the other, but there are now a few features we can use in this window to filter things down.\n\n\n\n\nFilter by Pin count\n\n\nFilter by Library\n\n\nFilter by Keywords\n\n\n\n\nThe \nfilter by pin count\n does what it says on the tin, if the schematic part only has 2 pins then the pcb footprints available shown\nwill also only have 2 pins.\n\n\nThe \nfilter by Library\n allows you to only see footprints from the library picked on the far left hand side of the form.\n\n\nThe \nfilter by keywords\n is probably the closest thing to a linkage between schematic parts and pcb footprints within KiCad.\nWhen creating a schematic part it\ns possible to list a series of keywords, and the same can be true with PCB footprints.\nIf the selected schematic part has a keyword listed in the list of available footprints then it will show up in the result list on the right hand side.\n\n\nThe \npreview footprint\n button is also very usefull to see what the footprint looks like during the picking process\n\n\n \n\n\nGenerating the NetList\n\n\nNext we need to generate a netlist file. A netlist file is just a list of the schematic parts / pcb footprints and how everything is wired together.\nWe use this within pcbnew as the initial input when creating the PCB\n\n\nClick on the \nGenerate Netlist\n button within the schematic editor\n\n\n \n\n\nThe end result will be a file called \nProjectName\n.net\n outputed within the Project Directory\n\n\nOpening the PCB\n\n\nNext we\nre going to read in the netlist file into the PCB Editor pcbnew \n\nOpen up pcbnew and click the \nRead NetList\n button\n\n\n \n\n\nClick \nRead Current Netlist\n and check the bottom for any errors when the file is read in\n\n\n \n\n\nThe end result will be a bunch of components all grouped together in the center of the board", 
+            "title": "KiCad - Schematic to PCB"
+        }, 
+        {
+            "location": "/KiCad/KiCad-SchematicPCB/#kicad-schematic-to-pcb", 
+            "text": "For this doc I m going to go over the steps needed to convert a KiCad schematic to an initial PCB Board", 
+            "title": "KiCad - Schematic to PCB"
+        }, 
+        {
+            "location": "/KiCad/KiCad-SchematicPCB/#assigning-footprints", 
+            "text": "First we re going to want to assign footprints to each of the components within the schematic.\nThe newer latest version of KiCad makes this a lot easier than the old version.\nWe have now have a way of doing this without having to jump into the PCB Editor first.     First select  Assign Component Footprints  from the  Tools  menu     Unlike eagle within KiCad footprints and schematic parts are considered completely seperate entities.\nIn the past this used to cause problems with linking one to the other, but there are now a few features we can use in this window to filter things down.   Filter by Pin count  Filter by Library  Filter by Keywords   The  filter by pin count  does what it says on the tin, if the schematic part only has 2 pins then the pcb footprints available shown\nwill also only have 2 pins.  The  filter by Library  allows you to only see footprints from the library picked on the far left hand side of the form.  The  filter by keywords  is probably the closest thing to a linkage between schematic parts and pcb footprints within KiCad.\nWhen creating a schematic part it s possible to list a series of keywords, and the same can be true with PCB footprints.\nIf the selected schematic part has a keyword listed in the list of available footprints then it will show up in the result list on the right hand side.  The  preview footprint  button is also very usefull to see what the footprint looks like during the picking process", 
+            "title": "Assigning Footprints"
+        }, 
+        {
+            "location": "/KiCad/KiCad-SchematicPCB/#generating-the-netlist", 
+            "text": "Next we need to generate a netlist file. A netlist file is just a list of the schematic parts / pcb footprints and how everything is wired together.\nWe use this within pcbnew as the initial input when creating the PCB  Click on the  Generate Netlist  button within the schematic editor     The end result will be a file called  ProjectName .net  outputed within the Project Directory", 
+            "title": "Generating the NetList"
+        }, 
+        {
+            "location": "/KiCad/KiCad-SchematicPCB/#opening-the-pcb", 
+            "text": "Next we re going to read in the netlist file into the PCB Editor pcbnew  \nOpen up pcbnew and click the  Read NetList  button     Click  Read Current Netlist  and check the bottom for any errors when the file is read in     The end result will be a bunch of components all grouped together in the center of the board", 
+            "title": "Opening the PCB"
+        }, 
+        {
+            "location": "/KiCad/KiCad-EdgeBorder/", 
+            "text": "KiCad - Creating an edge border\n\n\nOne of the first steps when creating a new PCB is to set the edge of the board. \n\nThere\ns a number of reasons for doing this.\n\n\n\n\nThis will define the outer edge for cutting the board\n\n\nThis will define the limits for the auto placement feature if used.\n\n\nThis will define the limits for the auto routing feature if used.\n\n\n\n\nLooking at the below screen grab\n\n\n \n\n\nOne of the first things your probably going to want to do is to change the cursor from a simple cross to a set of lines that span the entire board.\nThis makes creating box outlines a fair bit easier when drawing them.\nThe button is the one highlighted on the far left.\n\n\nNext select the yellow \nEdge Cuts\n layer at the top right\n\n\nWhen measuring distance on the board it\ns possible to use the \nSpace\n key to set a zero point.\nThis will set dx and dy at the bottom on the toolbar to a zero point, you can then use this to measure distance across the board\n\n\nTo start the edge cuts line, click the \nblue dotted line\n highlighted on the right to start drawing the box. \n\nUse \nRight Click -\n End Drawing\n once you\nve reached the last corner\n\n\nIt\ns also best to do this with a grid of 1mm, the cursor will auto snap to the grid but you can change the grid size along the top toolbar.", 
+            "title": "KiCad - Edge Border"
+        }, 
+        {
+            "location": "/KiCad/KiCad-EdgeBorder/#kicad-creating-an-edge-border", 
+            "text": "One of the first steps when creating a new PCB is to set the edge of the board.  \nThere s a number of reasons for doing this.   This will define the outer edge for cutting the board  This will define the limits for the auto placement feature if used.  This will define the limits for the auto routing feature if used.   Looking at the below screen grab     One of the first things your probably going to want to do is to change the cursor from a simple cross to a set of lines that span the entire board.\nThis makes creating box outlines a fair bit easier when drawing them.\nThe button is the one highlighted on the far left.  Next select the yellow  Edge Cuts  layer at the top right  When measuring distance on the board it s possible to use the  Space  key to set a zero point.\nThis will set dx and dy at the bottom on the toolbar to a zero point, you can then use this to measure distance across the board  To start the edge cuts line, click the  blue dotted line  highlighted on the right to start drawing the box.  \nUse  Right Click -  End Drawing  once you ve reached the last corner  It s also best to do this with a grid of 1mm, the cursor will auto snap to the grid but you can change the grid size along the top toolbar.", 
+            "title": "KiCad - Creating an edge border"
+        }, 
+        {
+            "location": "/KiCad/KiCad-DesignRules/", 
+            "text": "KiCad Design Rules - TODO\n\n\nNext we\nre going to set the design rules for the board.\n\n\nHackaday Suggestions\n\n\nLooking at this hackaday link for boards made using a Laser Cutter.\nIts suggests the following\n\n\n\n\nhttps://hackaday.com/2013/05/11/laser-cutter-helps-make-dual-sided-pcbs/\n\n\n\n\n\n\n\n\n\n\nRule\n\n\nMin\n\n\nTypical\n\n\nMax\n\n\n\n\n\n\n\n\n\n\nTrack Clearance\n\n\n\n\n15mil (0.381mm)\n\n\n\n\n\n\n\n\nTrack Width\n\n\n22mil (0.5588mm)\n\n\n\n\n\n\n\n\n\n\nDrill size\n\n\n20mil (0.508mm)\n\n\n\n\n\n\n\n\n\n\nVias / Outer\n\n\n18mil (0.4572mm)\n\n\n\n\n20mil (0.508mm)\n\n\n\n\n\n\nPads Top / Bottom\n\n\n15mil (0.381mm)\n\n\n\n\n\n\n\n\n\n\nAutorouting Grid\n\n\n\n\n2mil (0.0508mm)\n\n\n\n\n\n\n\n\n\n\nThey also suggest\n\n\n\n\n24 gauge wire or thinner is used for Vias\n\n\nDrill bit is 0.02\n (0.508mm) in diameter for via holes\n\n\nDrill bit is 0.04\n (1.016mm) in diameter for header pin holes\n\n\n\n\nKicad Design Rules\n\n\nBy Selecting Desgin Rules -\n Design Rules from the menu we can create a new NetClass to add in values\nYou may want to play around with different smaller values to see what is possible.\n\n\n\n\n\n\n\n\nHeader\n\n\nValue\n\n\n\n\n\n\n\n\n\n\nName\n\n\nLaser PCB\n\n\n\n\n\n\nClearance\n\n\n0.381\n\n\n\n\n\n\nTrack Width\n\n\n0.5588\n\n\n\n\n\n\nVia Dia\n\n\n0.7\n\n\n\n\n\n\nVia Drill\n\n\n0.508\n\n\n\n\n\n\nuVia Dia\n\n\n0.7\n\n\n\n\n\n\nuVia Drill\n\n\n0.508\n\n\n\n\n\n\n\n\nAlso you need to apply this netclass to all the components on the list", 
+            "title": "KiCad - Design Rules"
+        }, 
+        {
+            "location": "/KiCad/KiCad-DesignRules/#kicad-design-rules-todo", 
+            "text": "Next we re going to set the design rules for the board.", 
+            "title": "KiCad Design Rules - TODO"
+        }, 
+        {
+            "location": "/KiCad/KiCad-DesignRules/#hackaday-suggestions", 
+            "text": "Looking at this hackaday link for boards made using a Laser Cutter.\nIts suggests the following   https://hackaday.com/2013/05/11/laser-cutter-helps-make-dual-sided-pcbs/      Rule  Min  Typical  Max      Track Clearance   15mil (0.381mm)     Track Width  22mil (0.5588mm)      Drill size  20mil (0.508mm)      Vias / Outer  18mil (0.4572mm)   20mil (0.508mm)    Pads Top / Bottom  15mil (0.381mm)      Autorouting Grid   2mil (0.0508mm)      They also suggest   24 gauge wire or thinner is used for Vias  Drill bit is 0.02  (0.508mm) in diameter for via holes  Drill bit is 0.04  (1.016mm) in diameter for header pin holes", 
+            "title": "Hackaday Suggestions"
+        }, 
+        {
+            "location": "/KiCad/KiCad-DesignRules/#kicad-design-rules", 
+            "text": "By Selecting Desgin Rules -  Design Rules from the menu we can create a new NetClass to add in values\nYou may want to play around with different smaller values to see what is possible.     Header  Value      Name  Laser PCB    Clearance  0.381    Track Width  0.5588    Via Dia  0.7    Via Drill  0.508    uVia Dia  0.7    uVia Drill  0.508     Also you need to apply this netclass to all the components on the list", 
+            "title": "Kicad Design Rules"
+        }, 
+        {
+            "location": "/KiCad/KiCad-PartsPlacement/", 
+            "text": "KiCad Parts Placement - TODO\n\n\nLocking parts\n\n\nFor the next step we\nre going to move and lock the parts which need to be at the edges of the board in place\n\n\n\n\nClick / Turn on the Mode footprint button\n\n\nMove each of the parts which need to be in a fixed place into position\n\n\nRight Click on those parts and select Lock \nFootprint\n\n\n\n\n \n\n\nPlace parts\n\n\nNext we\nre going to use the Auto Place feature of KiCad just to do an initial placement \n\n(make sure Alex doesn\nt catch you using this)\n\n\nMake sure to set the grid size to something fairly small before using this.\nAlso you may want to manually move things around afterwards for better placement\nI just find it\ns a good initial step before anything else", 
+            "title": "KiCad - Parts Placement"
+        }, 
+        {
+            "location": "/KiCad/KiCad-PartsPlacement/#kicad-parts-placement-todo", 
+            "text": "", 
+            "title": "KiCad Parts Placement - TODO"
+        }, 
+        {
+            "location": "/KiCad/KiCad-PartsPlacement/#locking-parts", 
+            "text": "For the next step we re going to move and lock the parts which need to be at the edges of the board in place   Click / Turn on the Mode footprint button  Move each of the parts which need to be in a fixed place into position  Right Click on those parts and select Lock  Footprint", 
+            "title": "Locking parts"
+        }, 
+        {
+            "location": "/KiCad/KiCad-PartsPlacement/#place-parts", 
+            "text": "Next we re going to use the Auto Place feature of KiCad just to do an initial placement  \n(make sure Alex doesn t catch you using this)  Make sure to set the grid size to something fairly small before using this.\nAlso you may want to manually move things around afterwards for better placement\nI just find it s a good initial step before anything else", 
+            "title": "Place parts"
+        }, 
+        {
+            "location": "/KiCad/KiCad-Routing/", 
+            "text": "KiCAD Routing - TODO\n\n\nAuto Routing\n\n\nFor the Next step we\nre going to route the board\n\n\nExport .dsn file\n\n\n\n\nFirst Select the Free Route Button\n\n\nNext Press the button labled \nExport a Specctra Design (*.dsn) File\n\n\nSave the .dsn file ideally to a seperate directory (the auto router will likley create other files where the dsn file is located)\n\n\n\n\n \n\n\nNext grab a copy of the Freerouting jar from\n\n\n\n\nhttps://github.com/freerouting/freerouting/tree/master/binaries\n\n\n\n\nFreerouting\n\n\nOpen the dsn file saved within Freerouting\n\n\n \n\n\nSelect AutoRoute\n\n\n \n\n\nSelect File -\n Export Specctra Session File\n\n\n \n\n\nThis should result in a .rules and .ses file being exported into the same directory\n\n\nImport back to KiCad\n\n\nNext import the .ses file back into KiCad.\n\n\n \n\n\nThis should then place the routes and via\ns\n\n\nManual Routing\n\n\nWhen manual routing, I find it easier to enable the two buttons highlighted\n\n\n \n\n\nThis way all the options for right click  / Drag / Delete tracks are available\n\n\nTODO\n\n\n\n\nhttps://www.wayneandlayne.com/blog/2013/02/26/kicad-tutorial-pcb-edges/\n\n\nhttps://www.wayneandlayne.com/blog/2013/02/26/kicad-tutorial-copper-pours-fills/\n\n\n\n\nhttps://www.wayneandlayne.com/blog/tag/kicad-tutorial/\n\n\n\n\n\n\nUnsolderable top pads, for battery and pin headers, tRestrict (Place -\n Keep Out Area)\n\n\n\n\navoid vias under smd components, vRestrict (Place -\n Keep Out Area)\n\n\nTQFP will probably need thinner tracks", 
+            "title": "KiCad - Routing"
+        }, 
+        {
+            "location": "/KiCad/KiCad-Routing/#kicad-routing-todo", 
+            "text": "", 
+            "title": "KiCAD Routing - TODO"
+        }, 
+        {
+            "location": "/KiCad/KiCad-Routing/#auto-routing", 
+            "text": "For the Next step we re going to route the board", 
+            "title": "Auto Routing"
+        }, 
+        {
+            "location": "/KiCad/KiCad-Routing/#export-dsn-file", 
+            "text": "First Select the Free Route Button  Next Press the button labled  Export a Specctra Design (*.dsn) File  Save the .dsn file ideally to a seperate directory (the auto router will likley create other files where the dsn file is located)      Next grab a copy of the Freerouting jar from   https://github.com/freerouting/freerouting/tree/master/binaries", 
+            "title": "Export .dsn file"
+        }, 
+        {
+            "location": "/KiCad/KiCad-Routing/#freerouting", 
+            "text": "Open the dsn file saved within Freerouting     Select AutoRoute     Select File -  Export Specctra Session File     This should result in a .rules and .ses file being exported into the same directory", 
+            "title": "Freerouting"
+        }, 
+        {
+            "location": "/KiCad/KiCad-Routing/#import-back-to-kicad", 
+            "text": "Next import the .ses file back into KiCad.     This should then place the routes and via s", 
+            "title": "Import back to KiCad"
+        }, 
+        {
+            "location": "/KiCad/KiCad-Routing/#manual-routing", 
+            "text": "When manual routing, I find it easier to enable the two buttons highlighted     This way all the options for right click  / Drag / Delete tracks are available", 
+            "title": "Manual Routing"
+        }, 
+        {
+            "location": "/KiCad/KiCad-Routing/#todo", 
+            "text": "https://www.wayneandlayne.com/blog/2013/02/26/kicad-tutorial-pcb-edges/  https://www.wayneandlayne.com/blog/2013/02/26/kicad-tutorial-copper-pours-fills/   https://www.wayneandlayne.com/blog/tag/kicad-tutorial/    Unsolderable top pads, for battery and pin headers, tRestrict (Place -  Keep Out Area)   avoid vias under smd components, vRestrict (Place -  Keep Out Area)  TQFP will probably need thinner tracks", 
+            "title": "TODO"
+        }, 
+        {
+            "location": "/KiCad/KiCad-ExportGerber/", 
+            "text": "Kicad Exporting Gerbers - TODO\n\n\nOne of the first steps we need to do is get some gerber and drill files exported from Kicad.\nThese files will be imported into FlatCAM for isolation routing and for generating the svg export for visicut.\n\n\nTODO I\nm not sure of the minimum track width at this stage, something to be looked into, maybe a drc check file for KiCad\n\n\nSetting the Auxiliary Axis\n\n\nFirst we want to set the Auxiliary to the bottom left hand corner of the board \n\n\n\n\nSelect \nPlace -\n Drill and Place Offset\n from the Menu\n\n\nClick on the bottom left hand corner of the board for the 0,0 point\n\n\nA red circle should now show up at this corner\n\n\n\n\n \n\n\n \n\n\nExporting Gerbers\n\n\nNext we want to use the Plot option to output the drill and Gerber Files\n\n\n\n\nSelect \nFile -\n Plot\n from the menu\n\n\n\n\n \n\n\n\n\nNext select the output directory\n\n\nSelect which layers to export (Top / Bottom)\n\n\nMake sure \nUse auxiliary axis as origin\n is ticked\n\n\nClick Plot\n\n\n\n\n \n\n\nExporting Drill Files\n\n\nNext we\nre going to generate the drill files, since FlatCAM can read these too\n\n\n\n\nSelect \nGenerate Drill File\n\n\nYou should be able to leave most of the options at the defaults\n\n\nMake sure \nDrill Origin\n is set to \nAuxiliary Axis\n\n\nClick \nDrill File\n to generate the .drl file", 
             "title": "KiCad - Exporting Gerbers"
         }, 
         {
-            "location": "/Design/KiCad-GerberExport/#kicad-exporting-gerbers", 
+            "location": "/KiCad/KiCad-ExportGerber/#kicad-exporting-gerbers-todo", 
             "text": "One of the first steps we need to do is get some gerber and drill files exported from Kicad.\nThese files will be imported into FlatCAM for isolation routing and for generating the svg export for visicut.  TODO I m not sure of the minimum track width at this stage, something to be looked into, maybe a drc check file for KiCad", 
-            "title": "Kicad Exporting Gerbers"
+            "title": "Kicad Exporting Gerbers - TODO"
         }, 
         {
-            "location": "/Design/KiCad-GerberExport/#setting-the-auxiliary-axis", 
+            "location": "/KiCad/KiCad-ExportGerber/#setting-the-auxiliary-axis", 
             "text": "First we want to set the Auxiliary to the bottom left hand corner of the board    Select  Place -  Drill and Place Offset  from the Menu  Click on the bottom left hand corner of the board for the 0,0 point  A red circle should now show up at this corner", 
             "title": "Setting the Auxiliary Axis"
         }, 
         {
-            "location": "/Design/KiCad-GerberExport/#exporting-gerbers", 
+            "location": "/KiCad/KiCad-ExportGerber/#exporting-gerbers", 
             "text": "Next we want to use the Plot option to output the drill and Gerber Files   Select  File -  Plot  from the menu       Next select the output directory  Select which layers to export (Top / Bottom)  Make sure  Use auxiliary axis as origin  is ticked  Click Plot", 
             "title": "Exporting Gerbers"
         }, 
         {
-            "location": "/Design/KiCad-GerberExport/#exporting-drill-files", 
+            "location": "/KiCad/KiCad-ExportGerber/#exporting-drill-files", 
             "text": "Next we re going to generate the drill files, since FlatCAM can read these too   Select  Generate Drill File  You should be able to leave most of the options at the defaults  Make sure  Drill Origin  is set to  Auxiliary Axis  Click  Drill File  to generate the .drl file", 
             "title": "Exporting Drill Files"
         }, 
         {
-            "location": "/Design/FlatCAM-SingleSided/", 
-            "text": "FlatCAM - Single Sided boards\n\n\nThere\ns a piece of software called FlatCAM, normally this is used in situations where you want to mill out a PCB with a CNC.\nHowever it\ns also usefull for exporting SVG\ns from Gerbers and doing isolation routing.\n\n\n\n\nhttp://flatcam.org/\n\n\nhttp://flatcam.org/manual/index.html\n\n\nhttps://bitbucket.org/jpcgt/flatcam\n\n\n\n\nIsolation Routing\n\n\nIsolation routing is where you surround each track on the PCB with a line. So instead of removing all the Copper on the board,\nthis just removes the minimum needed to seperate one track from another.\n\n\n\n\nIn the case of a Laser Cutter the less paint removed from the board the better, the more paint you remove the more likley it will be\n    that the paint will re-settle elsewhere on the board.\n\n\nJust having the outlines of the tracks removed by the etchant means that less etchant is needed to make the board.\n\n\nIt makes the board look cooler.\n\n\n\n\nThere\ns also features built into FlatCAM for double sided boards, and adding in holes for a jig which I\nm hoping to explore later on. \n\nThe export to SVG features is relatively new, and at the time of writing only available in the master branch.\nI\nve placed a working copy (python) under \nhttps://github.com/HACManchester/Apps.Cad/tree/master/Builds\n\n\nImporting Gerber into FlatCAM\n\n\nThe first step is to import the Gerber into FlatCAM, and a drill file if you\nve created one\n\n\n\n\nFile -\n Open -\n Select Gerber File\n\n\nFile -\n Open -\n Select Drill File\n\n\n\n\n \n\n\n(I should probably point out that the image pictured has tracks too small to be used with the laser, but this is only for demonstration purposes)\n\n\nGenerating the Geometry\n\n\nThe next step is to generate a Geometry for the imported Gerber, this is actually very easy\n\n\n\n\nSelect the imported gerber under the Project pane\n\n\nSwitch to the Selected Tab\n\n\nEnter in a tool diameter, this will represent the thickness of the line that will surround the track\n\n\nClick \nGenerate Geometry\n\n\nTODO I think the minimum will be 0.1mm further experimentation is needed\n\n\n\n\n \n\n\nThis should result in a red line surrounding everything\n\n\nGenerate the CNCJob\n\n\nNext we need to generate a CNCJob, in this case we\nre not going to use G-Code, but instead do an SVG Export of the result.\n\n\n\n\nSwitch to the Project Tab and select the generated Geometry\n\n\n\n\n \n\n\n\n\nNext Switch back to the Selected Tab\n\n\nClick Generate to generate a CNC Job\n\n\nThis should result in a blue line around the tracks, this is what we\nre interested in for the laser cutter\n\n\n\n\n \n\n\nExport the CNCJob\n\n\nThe final step is just to export the CNCJob as an SVG\n\n\n\n\nSwtich back to the Selected Tab\n\n\nSelect the new CNCJob\n\n\nSelect File -\n Export SVG from the menu\n\n\n\n\n \n\n\nThere\ns quite a lot of different settings you can play with for exporting just the solder pads for example. \n\nIf you want the drill holes to be etched as well, then also Export the imported drill file as an SVG, at which point we can then import it later on into Visicut.", 
-            "title": "FlatCAM - Single Sided Boards"
-        }, 
-        {
-            "location": "/Design/FlatCAM-SingleSided/#flatcam-single-sided-boards", 
-            "text": "There s a piece of software called FlatCAM, normally this is used in situations where you want to mill out a PCB with a CNC.\nHowever it s also usefull for exporting SVG s from Gerbers and doing isolation routing.   http://flatcam.org/  http://flatcam.org/manual/index.html  https://bitbucket.org/jpcgt/flatcam", 
-            "title": "FlatCAM - Single Sided boards"
-        }, 
-        {
-            "location": "/Design/FlatCAM-SingleSided/#isolation-routing", 
-            "text": "Isolation routing is where you surround each track on the PCB with a line. So instead of removing all the Copper on the board,\nthis just removes the minimum needed to seperate one track from another.   In the case of a Laser Cutter the less paint removed from the board the better, the more paint you remove the more likley it will be\n    that the paint will re-settle elsewhere on the board.  Just having the outlines of the tracks removed by the etchant means that less etchant is needed to make the board.  It makes the board look cooler.   There s also features built into FlatCAM for double sided boards, and adding in holes for a jig which I m hoping to explore later on.  \nThe export to SVG features is relatively new, and at the time of writing only available in the master branch.\nI ve placed a working copy (python) under  https://github.com/HACManchester/Apps.Cad/tree/master/Builds", 
-            "title": "Isolation Routing"
-        }, 
-        {
-            "location": "/Design/FlatCAM-SingleSided/#importing-gerber-into-flatcam", 
-            "text": "The first step is to import the Gerber into FlatCAM, and a drill file if you ve created one   File -  Open -  Select Gerber File  File -  Open -  Select Drill File      (I should probably point out that the image pictured has tracks too small to be used with the laser, but this is only for demonstration purposes)", 
-            "title": "Importing Gerber into FlatCAM"
-        }, 
-        {
-            "location": "/Design/FlatCAM-SingleSided/#generating-the-geometry", 
-            "text": "The next step is to generate a Geometry for the imported Gerber, this is actually very easy   Select the imported gerber under the Project pane  Switch to the Selected Tab  Enter in a tool diameter, this will represent the thickness of the line that will surround the track  Click  Generate Geometry  TODO I think the minimum will be 0.1mm further experimentation is needed      This should result in a red line surrounding everything", 
-            "title": "Generating the Geometry"
-        }, 
-        {
-            "location": "/Design/FlatCAM-SingleSided/#generate-the-cncjob", 
-            "text": "Next we need to generate a CNCJob, in this case we re not going to use G-Code, but instead do an SVG Export of the result.   Switch to the Project Tab and select the generated Geometry       Next Switch back to the Selected Tab  Click Generate to generate a CNC Job  This should result in a blue line around the tracks, this is what we re interested in for the laser cutter", 
-            "title": "Generate the CNCJob"
-        }, 
-        {
-            "location": "/Design/FlatCAM-SingleSided/#export-the-cncjob", 
-            "text": "The final step is just to export the CNCJob as an SVG   Swtich back to the Selected Tab  Select the new CNCJob  Select File -  Export SVG from the menu      There s quite a lot of different settings you can play with for exporting just the solder pads for example.  \nIf you want the drill holes to be etched as well, then also Export the imported drill file as an SVG, at which point we can then import it later on into Visicut.", 
-            "title": "Export the CNCJob"
-        }, 
-        {
-            "location": "/Design/KiCad-Svg/", 
-            "text": "Kicad - Design\n\n\nNote this is an older doc I\nve kept for info, it\ns better to use the Gerber method instead because it\ns easier\n\n\nPCB Design\n\n\nThe first step is to open the PCB Design within KiCad\n\n\n \n\n\nExport Top Layer\n\n\nNext we\nre going to export the top layer as an SVG image\n\n\n\n\n\n\n\n\nNotes\n\n\n\n\n\n\n\n\n\n\nIt\ns best to avoid the use of the File -\n Export Svg option since that doesn\nt allow for a negative to be created, instead we\nre going to use Plot\n\n\n\n\n\n\nIt\ns also best to draw a square around the board on the \nEdge Cuts\n Layer, make sure it doesn\nt come into contact with any of the pins\n\n\n\n\n\n\n\n\n\n\nSelect \nFile -\n Plot\n\n\nSelect the Front Copper Layer on the left\n\n\nSelect the Output directory \nsvg/\n\n\nSelect Drill marks: \nSmall\n\n\nNegative plot: \nTicked\n\n\nMirrored Plot: \nUnticked\n for the front layer\n\n\nExclude PCB edge layer from other layers: \nUnticked\n To include the Outer cut line\n\n\n\n\n \n\n\nClick \nPlot\n to export the svg\n\n\nExport Bottom Layer\n\n\nNext for the bottom layer repeat as above but make the following changes\n\n\n\n\nSelect the Bottom Copper Layer on the left, unselect the Front Layer\n\n\nMirrored Plot: \nTicked\n for the bottom layer\n\n\n\n\n \n\n\nClick \nPlot\n to export the svg\n\n\nInkscape Edit\n\n\nNext we need to resize a couple of things within inkscape.\n\n\nFirst we want to resize the actual Document\n\n\n\n\nOpen each svg within inkscape\n\n\nOpen up File -\n Document Properties\n\n\nSelect the white box surrounding the Board\n\n\nExpand the \nResize page to content\n\n\nClick \nResize page to drawing or selection\n with the white outer box selected\n\n\n\n\n \n\n\nNext we need to resize the big black box that surrounds the box so that it fits within the document, this is acting as a mask\n\n\n\n\nSelect the white outline box, and select \nEdit -\n Copy\n\n\nSelect the Outer black box and Select \nEdit -\n Paste Size -\n Paste Size\n\n\nAt the top Enter X: 0 Y: 0 to position the box at the bottom left corner\n\n\n\n\n \n\n\nExamples\n\n\nSome svg\ns of adafruit\ns pcb ruler for testing how small can we go\n\n\n\n\nhttps://github.com/grbd/CAD.OxBot.Circuit/tree/master/Tests/AdafruitPCBRuller/svg\n\n\n\n\nA test of the pcb I replicated from the arduino cnc project, I\nve got no plan on using this (just created it to confirm the wiring is what I thought it was), but maybe a good test\n\n\n\n\nFront Layer\n\n\nBack Layer\n\n\n\n\nTODO\n\n\n\n\nNone of this is tested so far\n\n\nOne suggestion is that lines should be no thinner than 1.5pt, 5pt font. Further experimentation is needed\n\n\nI could do with trying to print adafruit\ns PCB ruler as a test.", 
+            "location": "/KiCad/KiCad-ExportSvg/", 
+            "text": "Kicad - Design\n\n\nNote this is an older doc I\nve kept for info, it\ns better to use the Gerber files with FlatCam instead because it\ns easier and has more features\n\n\nPCB Design\n\n\nThe first step is to open the PCB Design within KiCad\n\n\n \n\n\nExport Top Layer\n\n\nNext we\nre going to export the top layer as an SVG image\n\n\n\n\n\n\n\n\nNotes\n\n\n\n\n\n\n\n\n\n\nIt\ns best to avoid the use of the File -\n Export Svg option since that doesn\nt allow for a negative to be created, instead we\nre going to use Plot\n\n\n\n\n\n\nIt\ns also best to draw a square around the board on the \nEdge Cuts\n Layer, make sure it doesn\nt come into contact with any of the pins\n\n\n\n\n\n\n\n\n\n\nSelect \nFile -\n Plot\n\n\nSelect the Front Copper Layer on the left\n\n\nSelect the Output directory \nsvg/\n\n\nSelect Drill marks: \nSmall\n\n\nNegative plot: \nTicked\n\n\nMirrored Plot: \nUnticked\n for the front layer\n\n\nExclude PCB edge layer from other layers: \nUnticked\n To include the Outer cut line\n\n\n\n\n \n\n\nClick \nPlot\n to export the svg\n\n\nExport Bottom Layer\n\n\nNext for the bottom layer repeat as above but make the following changes\n\n\n\n\nSelect the Bottom Copper Layer on the left, unselect the Front Layer\n\n\nMirrored Plot: \nTicked\n for the bottom layer\n\n\n\n\n \n\n\nClick \nPlot\n to export the svg\n\n\nInkscape Edit\n\n\nNext we need to resize a couple of things within inkscape.\n\n\nFirst we want to resize the actual Document\n\n\n\n\nOpen each svg within inkscape\n\n\nOpen up File -\n Document Properties\n\n\nSelect the white box surrounding the Board\n\n\nExpand the \nResize page to content\n\n\nClick \nResize page to drawing or selection\n with the white outer box selected\n\n\n\n\n \n\n\nNext we need to resize the big black box that surrounds the box so that it fits within the document, this is acting as a mask\n\n\n\n\nSelect the white outline box, and select \nEdit -\n Copy\n\n\nSelect the Outer black box and Select \nEdit -\n Paste Size -\n Paste Size\n\n\nAt the top Enter X: 0 Y: 0 to position the box at the bottom left corner\n\n\n\n\n \n\n\nExamples\n\n\nSome svg\ns of adafruit\ns pcb ruler for testing how small can we go\n\n\n\n\nhttps://github.com/grbd/CAD.OxBot.Circuit/tree/master/Tests/AdafruitPCBRuller/svg\n\n\n\n\nA test of the pcb I replicated from the arduino cnc project, I\nve got no plan on using this (just created it to confirm the wiring is what I thought it was), but maybe a good test\n\n\n\n\nFront Layer\n\n\nBack Layer\n\n\n\n\nTODO\n\n\n\n\nNone of this is tested so far\n\n\nOne suggestion is that lines should be no thinner than 1.5pt, 5pt font. Further experimentation is needed\n\n\nI could do with trying to print adafruit\ns PCB ruler as a test.", 
             "title": "KiCad - Exporting as SVG"
         }, 
         {
-            "location": "/Design/KiCad-Svg/#kicad-design", 
-            "text": "Note this is an older doc I ve kept for info, it s better to use the Gerber method instead because it s easier", 
+            "location": "/KiCad/KiCad-ExportSvg/#kicad-design", 
+            "text": "Note this is an older doc I ve kept for info, it s better to use the Gerber files with FlatCam instead because it s easier and has more features", 
             "title": "Kicad - Design"
         }, 
         {
-            "location": "/Design/KiCad-Svg/#pcb-design", 
+            "location": "/KiCad/KiCad-ExportSvg/#pcb-design", 
             "text": "The first step is to open the PCB Design within KiCad", 
             "title": "PCB Design"
         }, 
         {
-            "location": "/Design/KiCad-Svg/#export-top-layer", 
+            "location": "/KiCad/KiCad-ExportSvg/#export-top-layer", 
             "text": "Next we re going to export the top layer as an SVG image     Notes      It s best to avoid the use of the File -  Export Svg option since that doesn t allow for a negative to be created, instead we re going to use Plot    It s also best to draw a square around the board on the  Edge Cuts  Layer, make sure it doesn t come into contact with any of the pins      Select  File -  Plot  Select the Front Copper Layer on the left  Select the Output directory  svg/  Select Drill marks:  Small  Negative plot:  Ticked  Mirrored Plot:  Unticked  for the front layer  Exclude PCB edge layer from other layers:  Unticked  To include the Outer cut line      Click  Plot  to export the svg", 
             "title": "Export Top Layer"
         }, 
         {
-            "location": "/Design/KiCad-Svg/#export-bottom-layer", 
+            "location": "/KiCad/KiCad-ExportSvg/#export-bottom-layer", 
             "text": "Next for the bottom layer repeat as above but make the following changes   Select the Bottom Copper Layer on the left, unselect the Front Layer  Mirrored Plot:  Ticked  for the bottom layer      Click  Plot  to export the svg", 
             "title": "Export Bottom Layer"
         }, 
         {
-            "location": "/Design/KiCad-Svg/#inkscape-edit", 
+            "location": "/KiCad/KiCad-ExportSvg/#inkscape-edit", 
             "text": "Next we need to resize a couple of things within inkscape.  First we want to resize the actual Document   Open each svg within inkscape  Open up File -  Document Properties  Select the white box surrounding the Board  Expand the  Resize page to content  Click  Resize page to drawing or selection  with the white outer box selected      Next we need to resize the big black box that surrounds the box so that it fits within the document, this is acting as a mask   Select the white outline box, and select  Edit -  Copy  Select the Outer black box and Select  Edit -  Paste Size -  Paste Size  At the top Enter X: 0 Y: 0 to position the box at the bottom left corner", 
             "title": "Inkscape Edit"
         }, 
         {
-            "location": "/Design/KiCad-Svg/#examples", 
+            "location": "/KiCad/KiCad-ExportSvg/#examples", 
             "text": "Some svg s of adafruit s pcb ruler for testing how small can we go   https://github.com/grbd/CAD.OxBot.Circuit/tree/master/Tests/AdafruitPCBRuller/svg   A test of the pcb I replicated from the arduino cnc project, I ve got no plan on using this (just created it to confirm the wiring is what I thought it was), but maybe a good test   Front Layer  Back Layer", 
             "title": "Examples"
         }, 
         {
-            "location": "/Design/KiCad-Svg/#todo", 
+            "location": "/KiCad/KiCad-ExportSvg/#todo", 
             "text": "None of this is tested so far  One suggestion is that lines should be no thinner than 1.5pt, 5pt font. Further experimentation is needed  I could do with trying to print adafruit s PCB ruler as a test.", 
             "title": "TODO"
+        }, 
+        {
+            "location": "/FlatCam/FlatCam-SingleSided/", 
+            "text": "FlatCAM - Single Sided boards\n\n\nThere\ns a piece of software called FlatCAM, normally this is used in situations where you want to mill out a PCB with a CNC.\nHowever it\ns also usefull for exporting SVG\ns from Gerbers and doing isolation routing.\n\n\n\n\nhttp://flatcam.org/\n\n\nhttp://flatcam.org/manual/index.html\n\n\nhttps://bitbucket.org/jpcgt/flatcam\n\n\n\n\nIsolation Routing\n\n\nIsolation routing is where you surround each track on the PCB with a line. So instead of removing all the Copper on the board,\nthis just removes the minimum needed to seperate one track from another.\n\n\n\n\nIn the case of a Laser Cutter the less paint removed from the board the better, the more paint you remove the more likley it will be\n    that the paint will re-settle elsewhere on the board.\n\n\nJust having the outlines of the tracks removed by the etchant means that less etchant is needed to make the board.\n\n\nIt makes the board look cooler.\n\n\n\n\nThere\ns also features built into FlatCAM for double sided boards, and adding in holes for a jig which I\nm hoping to explore later on. \n\nThe export to SVG features is relatively new, and at the time of writing only available in the master branch.\nI\nve placed a working copy (python) under \nhttps://github.com/HACManchester/Apps.Cad/tree/master/Builds\n\n\nImporting Gerber into FlatCAM\n\n\nThe first step is to import the Gerber into FlatCAM, and a drill file if you\nve created one\n\n\n\n\nFile -\n Open -\n Select Gerber File\n\n\nFile -\n Open -\n Select Drill File\n\n\n\n\n \n\n\n(I should probably point out that the image pictured has tracks too small to be used with the laser, but this is only for demonstration purposes)\n\n\nGenerating the Geometry\n\n\nThe next step is to generate a Geometry for the imported Gerber, this is actually very easy\n\n\n\n\nSelect the imported gerber under the Project pane\n\n\nSwitch to the Selected Tab\n\n\nEnter in a tool diameter, this will represent the thickness of the line that will surround the track\n\n\nClick \nGenerate Geometry\n\n\nTODO I think the minimum will be 0.1mm further experimentation is needed\n\n\n\n\n \n\n\nThis should result in a red line surrounding everything\n\n\nGenerate the CNCJob\n\n\nNext we need to generate a CNCJob, in this case we\nre not going to use G-Code, but instead do an SVG Export of the result.\n\n\n\n\nSwitch to the Project Tab and select the generated Geometry\n\n\n\n\n \n\n\n\n\nNext Switch back to the Selected Tab\n\n\nClick Generate to generate a CNC Job\n\n\nThis should result in a blue line around the tracks, this is what we\nre interested in for the laser cutter\n\n\n\n\n \n\n\nExport the CNCJob\n\n\nThe final step is just to export the CNCJob as an SVG\n\n\n\n\nSwtich back to the Selected Tab\n\n\nSelect the new CNCJob\n\n\nSelect File -\n Export SVG from the menu\n\n\n\n\n \n\n\nThere\ns quite a lot of different settings you can play with for exporting just the solder pads for example. \n\nIf you want the drill holes to be etched as well, then also Export the imported drill file as an SVG, at which point we can then import it later on into Visicut.", 
+            "title": "FlatCAM - Single Sided Boards"
+        }, 
+        {
+            "location": "/FlatCam/FlatCam-SingleSided/#flatcam-single-sided-boards", 
+            "text": "There s a piece of software called FlatCAM, normally this is used in situations where you want to mill out a PCB with a CNC.\nHowever it s also usefull for exporting SVG s from Gerbers and doing isolation routing.   http://flatcam.org/  http://flatcam.org/manual/index.html  https://bitbucket.org/jpcgt/flatcam", 
+            "title": "FlatCAM - Single Sided boards"
+        }, 
+        {
+            "location": "/FlatCam/FlatCam-SingleSided/#isolation-routing", 
+            "text": "Isolation routing is where you surround each track on the PCB with a line. So instead of removing all the Copper on the board,\nthis just removes the minimum needed to seperate one track from another.   In the case of a Laser Cutter the less paint removed from the board the better, the more paint you remove the more likley it will be\n    that the paint will re-settle elsewhere on the board.  Just having the outlines of the tracks removed by the etchant means that less etchant is needed to make the board.  It makes the board look cooler.   There s also features built into FlatCAM for double sided boards, and adding in holes for a jig which I m hoping to explore later on.  \nThe export to SVG features is relatively new, and at the time of writing only available in the master branch.\nI ve placed a working copy (python) under  https://github.com/HACManchester/Apps.Cad/tree/master/Builds", 
+            "title": "Isolation Routing"
+        }, 
+        {
+            "location": "/FlatCam/FlatCam-SingleSided/#importing-gerber-into-flatcam", 
+            "text": "The first step is to import the Gerber into FlatCAM, and a drill file if you ve created one   File -  Open -  Select Gerber File  File -  Open -  Select Drill File      (I should probably point out that the image pictured has tracks too small to be used with the laser, but this is only for demonstration purposes)", 
+            "title": "Importing Gerber into FlatCAM"
+        }, 
+        {
+            "location": "/FlatCam/FlatCam-SingleSided/#generating-the-geometry", 
+            "text": "The next step is to generate a Geometry for the imported Gerber, this is actually very easy   Select the imported gerber under the Project pane  Switch to the Selected Tab  Enter in a tool diameter, this will represent the thickness of the line that will surround the track  Click  Generate Geometry  TODO I think the minimum will be 0.1mm further experimentation is needed      This should result in a red line surrounding everything", 
+            "title": "Generating the Geometry"
+        }, 
+        {
+            "location": "/FlatCam/FlatCam-SingleSided/#generate-the-cncjob", 
+            "text": "Next we need to generate a CNCJob, in this case we re not going to use G-Code, but instead do an SVG Export of the result.   Switch to the Project Tab and select the generated Geometry       Next Switch back to the Selected Tab  Click Generate to generate a CNC Job  This should result in a blue line around the tracks, this is what we re interested in for the laser cutter", 
+            "title": "Generate the CNCJob"
+        }, 
+        {
+            "location": "/FlatCam/FlatCam-SingleSided/#export-the-cncjob", 
+            "text": "The final step is just to export the CNCJob as an SVG   Swtich back to the Selected Tab  Select the new CNCJob  Select File -  Export SVG from the menu      There s quite a lot of different settings you can play with for exporting just the solder pads for example.  \nIf you want the drill holes to be etched as well, then also Export the imported drill file as an SVG, at which point we can then import it later on into Visicut.", 
+            "title": "Export the CNCJob"
         }, 
         {
             "location": "/Etching/Cleaning-Board/", 

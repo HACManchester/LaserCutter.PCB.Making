@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Solder Paste Mylar - Manchester HacSpace - Laser PCB</title>
+	<title>KiCad - Schematic to PCB - Manchester HacSpace - Laser PCB</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -58,55 +58,55 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">KiCad <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-LibraryMgmt/">KiCad - Library Management</a>
+    <a href="../KiCad-LibraryMgmt/">KiCad - Library Management</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">KiCad - Schematic to PCB</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-SchematicPCB/">KiCad - Schematic to PCB</a>
+    <a href="../KiCad-EdgeBorder/">KiCad - Edge Border</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-EdgeBorder/">KiCad - Edge Border</a>
+    <a href="../KiCad-DesignRules/">KiCad - Design Rules</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-DesignRules/">KiCad - Design Rules</a>
+    <a href="../KiCad-PartsPlacement/">KiCad - Parts Placement</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-PartsPlacement/">KiCad - Parts Placement</a>
+    <a href="../KiCad-Routing/">KiCad - Routing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-Routing/">KiCad - Routing</a>
+    <a href="../KiCad-ExportGerber/">KiCad - Exporting Gerbers</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../KiCad/KiCad-ExportGerber/">KiCad - Exporting Gerbers</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../../KiCad/KiCad-ExportSvg/">KiCad - Exporting as SVG</a>
+    <a href="../KiCad-ExportSvg/">KiCad - Exporting as SVG</a>
 </li>
 
                     
@@ -163,19 +163,19 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mask <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
-<li class="active">
-    <a href="./">Solder Paste Mylar</a>
+<li >
+    <a href="../../Mask/SolderPaste-Stencil/">Solder Paste Mylar</a>
 </li>
 
                     
                         
 <li >
-    <a href="../SolderMask/">Solder Mask</a>
+    <a href="../../Mask/SolderMask/">Solder Mask</a>
 </li>
 
                     
@@ -214,12 +214,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../../Etching/Etching-Tank/">
+                    <a rel="next" href="../KiCad-LibraryMgmt/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../SolderMask/">
+                    <a rel="prev" href="../KiCad-EdgeBorder/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -233,37 +233,57 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#solder-paste-stencil">Solder Paste Stencil</a></li>
+        <li class="main active"><a href="#kicad-schematic-to-pcb">KiCad - Schematic to PCB</a></li>
         
-            <li><a href="#export-the-solder-paste-layer">Export the Solder Paste Layer</a></li>
+            <li><a href="#assigning-footprints">Assigning Footprints</a></li>
         
-            <li><a href="#import-to-flatcam">Import to FlatCAM</a></li>
+            <li><a href="#generating-the-netlist">Generating the NetList</a></li>
         
-            <li><a href="#import-to-visicut">Import to Visicut</a></li>
+            <li><a href="#opening-the-pcb">Opening the PCB</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="solder-paste-stencil">Solder Paste Stencil</h1>
-<p>It&rsquo;s possible to create a solder paste mask using the laser cutter and A4 Mylar stencil sheets</p>
-<h2 id="export-the-solder-paste-layer">Export the Solder Paste Layer</h2>
-<p>Within Kicad</p>
+<h1 id="kicad-schematic-to-pcb">KiCad - Schematic to PCB</h1>
+<p>For this doc I&rsquo;m going to go over the steps needed to convert a KiCad schematic to an initial PCB Board</p>
+<h2 id="assigning-footprints">Assigning Footprints</h2>
+<p>First we&rsquo;re going to want to assign footprints to each of the components within the schematic.
+The newer latest version of KiCad makes this a lot easier than the old version.
+We have now have a way of doing this without having to jump into the PCB Editor first.</p>
+<p><a href="../../images/KiCad/SchematicPCB/Schematic1.png"><img src="../../images/KiCad/SchematicPCB/Schematic1.png" height="50%" width="50%" ></a> <br></p>
+<p>First select <strong>Assign Component Footprints</strong> from the <strong>Tools</strong> menu</p>
+<p><a href="../../images/KiCad/SchematicPCB/Schematic2.png"><img src="../../images/KiCad/SchematicPCB/Schematic2.png" height="50%" width="50%" ></a> <br></p>
+<p>Unlike eagle within KiCad footprints and schematic parts are considered completely seperate entities.
+In the past this used to cause problems with linking one to the other, but there are now a few features we can use in this window to filter things down.</p>
 <ul>
-<li>Export the layers F.Paste and B.Paste as Gerbers</li>
-<li><strong>Auxiliary axis as origin:</strong> Ticked</li>
-<li><strong>Exclude PCB edge layer from other layers:</strong> unticked</li>
-<li>Plot these layers out as gerber files</li>
+<li>Filter by Pin count</li>
+<li>Filter by Library</li>
+<li>Filter by Keywords</li>
 </ul>
-<h2 id="import-to-flatcam">Import to FlatCAM</h2>
-<p>Next import to flatcam, then re-export as an SVG</p>
-<p><a href="../../images/Mask/SolderStencil/FlatCAM-Paste1.png"><img src="../../images/Mask/SolderStencil/FlatCAM-Paste1.png" height="50%" width="50%" ></a> <br></p>
-<h2 id="import-to-visicut">Import to Visicut</h2>
-<p>Finaly drag and drop the svg into Visicut and use Map by colour</p>
-<p>TODO see if Engrave Solid is the best option even though we&rsquo;re cutting through for accuracy
-also what power to use?</p>
-<p><a href="../../images/Mask/SolderStencil/Visicut-Paste1.png"><img src="../../images/Mask/SolderStencil/Visicut-Paste1.png" height="50%" width="50%" ></a> <br></p></div>
+<p>The <strong>filter by pin count</strong> does what it says on the tin, if the schematic part only has 2 pins then the pcb footprints available shown
+will also only have 2 pins.</p>
+<p>The <strong>filter by Library</strong> allows you to only see footprints from the library picked on the far left hand side of the form.</p>
+<p>The <strong>filter by keywords</strong> is probably the closest thing to a linkage between schematic parts and pcb footprints within KiCad.
+When creating a schematic part it&rsquo;s possible to list a series of keywords, and the same can be true with PCB footprints.
+If the selected schematic part has a keyword listed in the list of available footprints then it will show up in the result list on the right hand side.</p>
+<p>The <strong>preview footprint</strong> button is also very usefull to see what the footprint looks like during the picking process</p>
+<p><a href="../../images/KiCad/SchematicPCB/Schematic3.png"><img src="../../images/KiCad/SchematicPCB/Schematic3.png" height="50%" width="50%" ></a> <br></p>
+<h2 id="generating-the-netlist">Generating the NetList</h2>
+<p>Next we need to generate a netlist file. A netlist file is just a list of the schematic parts / pcb footprints and how everything is wired together.
+We use this within pcbnew as the initial input when creating the PCB</p>
+<p>Click on the <strong>Generate Netlist</strong> button within the schematic editor</p>
+<p><a href="../../images/KiCad/SchematicPCB/Schematic4.png"><img src="../../images/KiCad/SchematicPCB/Schematic4.png" height="50%" width="50%" ></a> <br></p>
+<p>The end result will be a file called <strong>&lt;ProjectName&gt;.net</strong> outputed within the Project Directory</p>
+<h2 id="opening-the-pcb">Opening the PCB</h2>
+<p>Next we&rsquo;re going to read in the netlist file into the PCB Editor pcbnew <br>
+Open up pcbnew and click the <strong>Read NetList</strong> button</p>
+<p><a href="../../images/KiCad/SchematicPCB/Pcb1.png"><img src="../../images/KiCad/SchematicPCB/Pcb1.png" height="50%" width="50%" ></a> <br></p>
+<p>Click <strong>Read Current Netlist</strong> and check the bottom for any errors when the file is read in</p>
+<p><a href="../../images/KiCad/SchematicPCB/Pcb2.png"><img src="../../images/KiCad/SchematicPCB/Pcb2.png" height="50%" width="50%" ></a> <br></p>
+<p>The end result will be a bunch of components all grouped together in the center of the board</p>
+<p><a href="../../images/KiCad/SchematicPCB/Pcb3.png"><img src="../../images/KiCad/SchematicPCB/Pcb3.png" height="50%" width="50%" ></a> <br></p></div>
         </div>
 
         <footer class="col-md-12">

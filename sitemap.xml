@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,20 +12,60 @@
     
         
     <url>
-     <loc>None/Design/KiCad-GerberExport/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <loc>None/KiCad/KiCad-LibraryMgmt/</loc>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Design/FlatCAM-SingleSided/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <loc>None/KiCad/KiCad-SchematicPCB/</loc>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Design/KiCad-Svg/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <loc>None/KiCad/KiCad-EdgeBorder/</loc>
+     <lastmod>2016-04-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/KiCad/KiCad-DesignRules/</loc>
+     <lastmod>2016-04-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/KiCad/KiCad-PartsPlacement/</loc>
+     <lastmod>2016-04-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/KiCad/KiCad-Routing/</loc>
+     <lastmod>2016-04-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/KiCad/KiCad-ExportGerber/</loc>
+     <lastmod>2016-04-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/KiCad/KiCad-ExportSvg/</loc>
+     <lastmod>2016-04-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/FlatCam/FlatCam-SingleSided/</loc>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -35,25 +75,25 @@
         
     <url>
      <loc>None/Etching/Cleaning-Board/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/Etching/CopperBoard-Prep/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/Etching/Laser-Engraving/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/Etching/Etching-Tank/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -63,13 +103,13 @@
         
     <url>
      <loc>None/Mask/SolderPaste-Stencil/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/Mask/SolderMask/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -79,13 +119,13 @@
         
     <url>
      <loc>None/Misc/Further-Ideas/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/Misc/Links/</loc>
-     <lastmod>2016-04-06</lastmod>
+     <lastmod>2016-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
